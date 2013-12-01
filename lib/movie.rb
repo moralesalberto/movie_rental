@@ -1,4 +1,5 @@
 class Movie
+
   REGULAR = 0
   NEW_RELEASE = 1
   CHILDRENS = 2
@@ -9,4 +10,5 @@ class Movie
   def initialize(title, price_code)
     @title, @price_code = title, price_code
   end
+
 end

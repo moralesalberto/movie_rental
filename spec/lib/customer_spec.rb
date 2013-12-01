@@ -1,9 +1,9 @@
 require 'spec_helper'
 
 describe Customer do
-  subject(:customer) { Customer.new("juan")}
+  let (:customer) { Customer.new("juan")}
 
-  describe "a single customer statement" do
+  describe "a customer statement with one rental" do
 
     let(:movie) { Movie.new("Mars - The Sequel", Movie::REGULAR) }
     let(:rental) { Rental.new(movie, 3) }

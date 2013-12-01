@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Rental do
-  let(:movie) { fabricate_movie }
+  let(:movie) { Movie.new("Mars", Movie::NEW_RELEASE) }
 
   it "should belong to a movie" do
     rental = Rental.new(movie, 3)
