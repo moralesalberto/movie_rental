@@ -8,6 +8,7 @@ GEM
     faker (1.2.0)
       i18n (~> 0.5)
     ffi (1.9.3)
+    fivemat (1.2.1)
     formatador (0.2.4)
     guard (2.2.4)
       formatador (>= 0.2.4)
@@ -49,6 +50,7 @@ PLATFORMS
 
 DEPENDENCIES
   faker
+  fivemat
   guard-rspec
   pry
   rspec

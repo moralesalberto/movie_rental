@@ -3,22 +3,26 @@ require 'spec_helper'
 describe Customer do
   subject(:customer) { Customer.new("juan")}
 
-  it "starts with no rentals" do
-    expect(customer.name).to eq("juan")
-  end
+  describe "a single customer statement" do
 
-  it "should have a statement for a rental" do                      
-    rental = fabricate_rental
-    customer.add_rental(rental) 
-    puts customer.statement
-    expect(customer.statement).to include("juan")
-  end
+    let(:movie) { Movie.new("Mars - The Sequel", Movie::REGULAR) }
+    let(:rental) { Rental.new(movie, 3) }
 
+    before do
+      customer.add_rental(rental)
+    end
 
-  it "should have a statement for several rentals" do                      
-    rentals = 4.times.map { fabricate_rental }
-    rentals.each { |rental| customer.add_rental(rental) }
-    puts customer.statement
-    expect(customer.statement).to include("juan")
+    subject { customer.statement }
+
+    it { should match /Rental Record for juan/ }
+
+    it { should match /Mars - The Sequel/ }
+
+    it { should match /Mars - The Sequel\t3.5/ }
+
+    it { should match /Amount owed is 3.5/ }
+
+    it { should match /You earned 1 frequent renter points/ }
+
   end
 end
