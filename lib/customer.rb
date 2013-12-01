@@ -14,12 +14,11 @@ class Customer
 
     total_amount, frequent_renter_points = 0, 0
 
-    result = "Rental Record for #{@name}\n"
+    result = "\nRental Record for #{@name}\n"
     @rentals.each do |element|
       this_amount = 0
 
       #determine amounts for each line
-
       case element.movie.price_code
       when Movie::REGULAR
         this_amount += 2
@@ -45,8 +44,8 @@ class Customer
     end
 
     #add footer lines
-    result += "Amount owed is #{total_amount}\n"
-    result += "You earned #{frequent_renter_points} frequent renter points"
+    result += "\nAmount owed is #{total_amount}\n"
+    result += "\nYou earned #{frequent_renter_points} frequent renter points"
     result
 
   end
