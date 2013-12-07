@@ -8,7 +8,7 @@ If you want to follow along start with the branch_0.
 ### Overview of the program
 This is a program to calculate and print a statement of a customer's charges at a video store.
 
-The program is told which movises a customer rented and for how long. It then calculates the charges, which depend on 
+The program is told which movies a customer rented and for how long. It then calculates the charges, which depend on 
 how long the movie is rented, and identifies the type of movie.
 
 There are three kinds of movies: regular, childrens and new releases. In addition to calculating charges, the statement
